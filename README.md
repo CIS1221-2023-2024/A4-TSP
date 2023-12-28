@@ -3,7 +3,7 @@
 # Introduction
 This project utilises The Branch and Bound Method, The Nearest Neighbor Method and brute force in order to solve the travelling salesman problem. These methods have been implemented in both Java and Python.
 
-#Wiki
+# Wiki
 Wiki.md
 
 # Team Members
