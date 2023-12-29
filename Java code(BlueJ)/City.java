@@ -10,10 +10,10 @@ public class City{
 
     //Getters and Setters
     void setX(int x){
-        this x = x;
+        this.x = x;
     }
     void setY(int y){
-        this y = y;
+        this.y = y;
     }
     int getX(){
         return x;
@@ -24,6 +24,6 @@ public class City{
     
     //Method to calculate the distance between two cities.
     public static double calculateDistance(City a, City b){
-        return Math.sqrt(Math.pow(b.y-a.y,2)-Math.pow(b.x-a.x,2));
+        return Math.sqrt(Math.pow(b.y-a.y,2)+Math.pow(b.x-a.x,2));
     }
 }
