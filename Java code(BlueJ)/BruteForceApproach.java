@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 public class BruteForceApproach {
     //Method to calculate the distance of going through every city.
     public static double calculateTourDistance(City[] cities, int[] permutation) {
