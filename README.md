@@ -12,7 +12,7 @@ Karl Cassar: Focus on Java Development and documentation.
 Gary Ken Micallef: Focus on Python Development and documentation.
 
 # Running the program
-Python:
+Python: No special requirements for executing code
 
 Java:
 
