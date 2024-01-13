@@ -3,7 +3,9 @@
 ## Project Overview
 
 **Project Name**: A4-TSP
+
 **Date of Review**: 13/01/2024
+
 **Challenger**: Giorgio Bellia
 
 The A4-TSP is a project that focuses on algorithms to solve the Travelling Salesman Problem, these algorithms are explored using Python and Java. The Travelling SalesMan Problem is an [NP-Hard](https://en.wikipedia.org/wiki/NP-hardness) problem which scope is to find the shortest path to go through a set of cities and going back to the original one.
@@ -28,17 +30,19 @@ In this implementation, each algorithm is represented by functions in a class(ob
 ### Functionality 
 - ***Python***
 In order to test the functionality of the code, I used an [online Tsp solver](https://www.lancaster.ac.uk/fas/psych/software/TSP/TSP.html) and compared the script's output with the online solver's one. The Brute Force algorithm and the Branch and Bound algorithm worked accurately. However, for both algorithm ten cities is the maximum feasible input; after that, computation time takes from 15 minutes onward. On the other hand, the Nearest Neighbour algorithm, although at the expense of accuracy, can compute thousands of cities in few seconds.
-Here is the table showing the results:
+Here is the table showing the results given the following list [(86, 68), (23, 1), (7, 59), (62, 57), (84, 24), (57, 10), (18, 70), (58, 33), (97, 45), (17, 45)]:
 
-| NumCities | MinDistBB | TimeBB | MinDistBF | TimeBF | MinDistNN | TimeNN |
-|-----------|-----------|--------|-----------|--------|-----------|--------|
-| 3         | 114.258   | 0.001  | 114.258   | 0.001  | 114.258   | 0.0    |
-| 4         | 114.685   | 0.001  | 114.685   | 0.000  | 124.001   | 0.0    |
-| 5         | 189.660   | 0.005  | 189.660   | 0.004  | 220.717   | 0.0    |
-| 6         | 196.064   | 0.030  | 196.064   | 0.023  | 242.248   | 0.0    |
-| 7         | 257.381   | 0.208  | 257.381   | 0.189  | 310.685   | 0.0    |
-| 8         | 258.898   | 1.619  | 258.898   | 1.756  | 274.025   | 0.0    |
-| 9         | 259.409   | 15.031 | 259.409   | 17.734 | 298.692   | 0.0    |
+| NumCities | MinDistBB | TimeBB   | MinDistBF | TimeBF   | MinDistNN | TimeNN |
+|-----------|-----------|----------|-----------|----------|-----------|--------|
+|     3     |  107.274  | 0.001    |  107.274  | 0.000    |  107.274  |  0.0   |
+|     4     |  151.973  | 0.002    |  151.973  | 0.000    |  154.027  |  0.0   |
+|     5     |  196.765  | 0.004    |  196.765  | 0.008    |  196.765  |  0.0   |
+|     6     |  196.976  | 0.037    |  196.976  | 0.032    |  197.643  |  0.0   |
+|     7     |  214.555  | 0.259    |  214.555  | 0.335    |  214.555  |  0.0   |
+|     8     |  221.162  | 2.071    |  221.162  | 2.986    |  230.571  |  0.0   |
+|     9     |  221.166  | 18.888   |  221.166  | 23.636   |  230.668  |  0.0   |
+|    10     |  230.066  | 354.333  |  230.066  | 247.620  |  239.815  |  0.0   |
+
 - ***Java*** 
 Currently, it can not be tested since the Branch and Bound algorithm and the Nearest Neighbor algorithm still make use of the matrix and no information on how to retrieve the matrix is given.
 ## To-do List
