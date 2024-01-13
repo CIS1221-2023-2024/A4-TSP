@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 public class BruteForceApproach {
@@ -78,3 +77,4 @@ public class BruteForceApproach {
             cities[i] = new City(rn.nextInt(100), rn.nextInt(100));
         }
     }
+}
