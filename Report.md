@@ -30,18 +30,19 @@ In this implementation, each algorithm is represented by functions in a class(ob
 ### Functionality 
 - ***Python***
 In order to test the functionality of the code, I used an [online Tsp solver](https://www.lancaster.ac.uk/fas/psych/software/TSP/TSP.html) and compared the script's output with the online solver's one. The Brute Force algorithm and the Branch and Bound algorithm worked accurately. However, for both algorithm ten cities is the maximum feasible input; after that, computation time takes from 15 minutes onward. On the other hand, the Nearest Neighbour algorithm, although at the expense of accuracy, can compute thousands of cities in few seconds.
-Here is the table showing the results given the following list [(86, 68), (23, 1), (7, 59), (62, 57), (84, 24), (57, 10), (18, 70), (58, 33), (97, 45), (17, 45)]:
+Here is the table showing the results given the following list [(57, 30), (41, 32), (76, 73), (31, 60), (51, 51), (26, 87), (46, 42), (34, 56), (59, 67), (80, 91)]:
 
 | NumCities | MinDistBB | TimeBB   | MinDistBF | TimeBF   | MinDistNN | TimeNN |
 |-----------|-----------|----------|-----------|----------|-----------|--------|
-|     3     |  107.274  | 0.001    |  107.274  | 0.000    |  107.274  |  0.0   |
-|     4     |  151.973  | 0.002    |  151.973  | 0.000    |  154.027  |  0.0   |
-|     5     |  196.765  | 0.004    |  196.765  | 0.008    |  196.765  |  0.0   |
-|     6     |  196.976  | 0.037    |  196.976  | 0.032    |  197.643  |  0.0   |
-|     7     |  214.555  | 0.259    |  214.555  | 0.335    |  214.555  |  0.0   |
-|     8     |  221.162  | 2.071    |  221.162  | 2.986    |  230.571  |  0.0   |
-|     9     |  221.166  | 18.888   |  221.166  | 23.636   |  230.668  |  0.0   |
-|    10     |  230.066  | 354.333  |  230.066  | 247.620  |  239.815  |  0.0   |
+| 3         | 117.042   | 0.000    | 117.042   | 0.000    | 117.042   | 0.0    |
+| 4         | 139.707   | 0.000    | 139.707   | 0.003    | 139.707   | 0.0    |
+| 5         | 147.839   | 0.000    | 147.839   | 0.006    | 153.378   | 0.0    |
+| 6         | 180.381   | 0.032    | 180.381   | 0.044    | 185.920   | 0.0    |
+| 7         | 185.115   | 0.262    | 185.115   | 0.345    | 185.925   | 0.0    |
+| 8         | 185.268   | 2.007    | 185.268   | 3.044    | 186.713   | 0.0    |
+| 9         | 187.883   | 18.835   | 187.883   | 23.635   | 191.406   | 0.0    |
+| 10        | 208.547   | 338.011  | 208.547   | 246.760  | 228.026   | 0.0    |
+
 
 - ***Java*** 
 Currently, it can not be tested since the Branch and Bound algorithm and the Nearest Neighbor algorithm still make use of the matrix and no information on how to retrieve the matrix is given.
