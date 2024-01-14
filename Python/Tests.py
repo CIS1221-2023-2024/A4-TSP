@@ -20,13 +20,15 @@ def random_test(random_cities, method):
     return data
 
 #Generates random cities
-#Up to 10 cities since Brute Force and Branch and Bround approaches take several minutes afterwards
+#Up to 9 cities since Brute Force and Branch and Bround approaches take several minutes afterwards
 cities = [(rng.randint(0,100), rng.randint(0,100)) for i in range(9)]
+print("List of cities which will be tested: ",cities)
 
 #Creates DataFrames for each algorithm
 frame_bf = pd.DataFrame(data=random_test(cities, tsp.tsp_brute_force), columns=["NumCities", "MinDistBF", "TimeBF"])
 frame_bb = pd.DataFrame(data=random_test(cities, tsp.branch_and_bound_tsp), columns=["NumCities", "MinDistBB", "TimeBB"])
 frame_nn = pd.DataFrame(data=random_test(cities, tsp.nearest_neighbor_tsp), columns=["NumCities", "MinDistNN", "TimeNN"])
+
 
 #Merges the DataFrames
 final_frame = pd.merge(pd.merge(frame_bb, frame_bf), frame_nn)
