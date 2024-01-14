@@ -16,4 +16,18 @@ Python: No special requirements for executing code
 
 Java:
 
+**Tests**: To run python test, dowload the file and then on command line access the file
+
+      cd "Path of Tests.py"
+
+Make sure pandas is installed in the python environment, if not
+
+      pip install pandas
+
+Then run the test
+
+      python Tests.py
+      
 # Reviewing and Evaluating the Project
+
+[Report.md](https://github.com/CIS1221-2023-2024/A4-TSP/blob/main/Report.md)
