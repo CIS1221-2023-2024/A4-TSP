@@ -9,7 +9,7 @@
 **Challenger**: Giorgio Bellia
 
 The A4-TSP is a project that focuses on algorithms to solve the Travelling Salesman Problem, these algorithms are explored using Python and Java. The Travelling SalesMan Problem is an [NP-Hard](https://en.wikipedia.org/wiki/NP-hardness) problem which scope is to find the shortest path to go through a set of cities and going back to the original one.
-In this report, I critically review the project considering three main aspects: [Project Structure](#project-structure), [code quality](#code-quality) and [functionality](#functionality). Also, I provide recommendations for future enhancements and [personal proposes](#code-changes). At the end of the report I also attached a [to-do list](#to-do-list) for the team members.
+In this report, I critically review the project considering three main aspects: [Project Structure](#project-structure), [code quality](#code-quality) and [functionality](#functionality). Also, I provide recommendations for future enhancements and [personal proposals](#code-changes). At the end of the report I also attached a [to-do list](#to-do-list) for the team members.
 
 
 ### Project Structure
@@ -45,9 +45,9 @@ Here is the table showing the results given the following list [(57, 30), (41, 3
 
 
 - ***Java*** 
-Currently, it can not be tested since the Branch and Bound algorithm and the Nearest Neighbor algorithm still make use of the matrix and no information on how to retrieve the matrix is given.
+Currently, it can not be tested since the Branch and Bound algorithm make use of the matrix and no information on how to retrieve the matrix is given.
 ## To-do List
-Here is a list to summarise the tasks to do, some of this tasks were tackled by me in my branch. Which I will merge to the main once you tell you agree with my changes.
+Here is a list to summarise the tasks to do, some of this tasks were tackled by me in my branch. Which I will merge to the main once you tell me you agree with my changes.
 - [ ] Add execution and use instructions on the README
 - [ ] Add more detailed comments
 - [ ] Fixes on code quality
