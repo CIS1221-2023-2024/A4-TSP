@@ -62,28 +62,35 @@ def branch_and_bound_tsp(cities):
     minimum_distance = float('inf')
     optimal_order = None
 
-    while node_queue:
-        current_node = node_queue.pop(0)
-        if not current_node['order']:
+  
+    while node_queue: # Main loop: Explore nodes until the priority queue is empty
+        
+        current_node = node_queue.pop(0) # Pop a node from the front of the queue
+        
+        if not current_node['order']: # Initialize order if empty
             current_node['order'] = [0]
 
-        if len(current_node['order']) == num_cities:
-            current_distance = calculate_total_distance(current_node['order'], cities)
-            if current_distance < minimum_distance:
+        if len(current_node['order']) == num_cities: # Check if all cities have been visited
+            current_distance = calculate_total_distance(current_node['order'], cities) # Calculate the total distance of the current tour
+            
+            if current_distance < minimum_distance: # Update optimal tour if the current tour is shorter
                 minimum_distance = current_distance
                 optimal_order = current_node['order']
-            continue
+            continue # Skip to the next iteration of the loop
 
-        for i in range(num_cities):
+        for i in range(num_cities):  # Explore child nodes for each unvisited city
             if i not in current_node['order']:
-                child_node = {
+                
+                child_node = {  # Create a child node by adding the unvisited city to the current order
                     'order': current_node['order'] + [i],
                     'reduced_matrix': np.copy(current_node['reduced_matrix']),
                     'bound': 0,
                 }
                 child_node['bound'] = current_node['bound'] + \
                                       current_node['reduced_matrix'][current_node['order'][-1], i]
-                reduce_matrix(child_node['reduced_matrix'])
+                
+                reduce_matrix(child_node['reduced_matrix'])  # Reduce the matrix for the child node
+                
                 child_node['bound'] += np.sum(np.min(child_node['reduced_matrix'], axis=1))
                 if child_node['bound'] < minimum_distance:
                     node_queue.append(child_node)
