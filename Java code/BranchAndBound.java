@@ -1,7 +1,7 @@
 import java.util.*;
 
-class BranchAndBound {
-    static int N = 4;//Number of cities
+public class BranchAndBound {
+    static int N = 0;//Number of cities
     static int final_path[] = new int[N + 1];//Array for final solution
     static boolean visited[] = new boolean[N];//To not go to the same city twice
     
@@ -37,21 +37,5 @@ class BranchAndBound {
         curr_path[0] = 0;
 
         TSPRec(adj, 1, curr_path);
-    }
-
-    public static void main(String[] args) {
-        int adj[][] = {//matrix to be solved
-                {0, 10, 15, 20},
-                {10, 0, 35, 25},
-                {15, 35, 0, 30},
-                {20, 25, 30, 0}
-        };
-
-        TSP(adj);
-
-        System.out.printf("Optimal Path:");
-        for (int i = 0; i <= N; i++) {
-            System.out.printf("%d ", final_path[i]);
-        }
     }
 }

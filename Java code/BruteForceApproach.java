@@ -1,5 +1,3 @@
-import java.util.Random;
-import java.util.Scanner;
 public class BruteForceApproach {
     //Method to calculate the distance of going through every city.
     public static double calculateTourDistance(City[] cities, int[] permutation) {
@@ -58,23 +56,5 @@ public class BruteForceApproach {
         }
         //Example: (0,0),(1,2),(2,4),(2,3) will become (1,2),(0,0),(2,4),(2,3)
         return true;
-    }
-    
-    //User input into coordinates (n)
-    public static void userInput(City[] cities, Scanner sc) {
-        for (int i = 0; i < cities.length; i++) {
-            System.out.print("\nEnter x coordinate: ");
-            int x = sc.nextInt();
-            System.out.print("\nEnter y coordinate: ");
-            int y = sc.nextInt();
-            cities[i] = new City(x, y);
-        }
-    }
-    
-    //Making random coordinates for the random input (r)
-    public static void randomInput(City[] cities, Random rn) {
-        for (int i = 0; i < cities.length; i++) {
-            cities[i] = new City(rn.nextInt(100), rn.nextInt(100));
-        }
     }
 }
