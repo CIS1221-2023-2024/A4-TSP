@@ -1,81 +1,7 @@
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
-public class NearestNeighborTSP{
-    
-    public static class City {
-        private int x; //X coordinate
-        private int y; //Y coordinate
-        
-        //Constructor
-        City(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-        
-        //Getters and Setters
-        void setX(int x) {
-            this.x = x;
-        }
-        
-        void setY(int y) {
-            this.y = y;
-        }
-        
-        int getX() {
-            return x;
-        }
-        
-        int getY() {
-            return y;
-        }
-        
-        //Method to calculate the distance between two cities.
-        public static double calculateDistance(City a, City b) {
-            return Math.sqrt(Math.pow(b.y - a.y, 2) + Math.pow(b.x - a.x, 2));
-        }
-    }
-    
-    //Method to calculate the distance of going through every city.
-    public static double calculateTourDistance(City[] cities, int[] permutation) {
-        double totalDistance = 0;
-        
-        //Going through each pair of consecutive cities in the permutation
-        for (int i = 0; i < permutation.length - 1; i++) {
-            int cityIndex1 = permutation[i];
-            int cityIndex2 = permutation[i + 1];
-            
-            //Use the calculateDistance method from the City class to calculate the distance
-            totalDistance += City.calculateDistance(cities[cityIndex1], cities[cityIndex2]);
-        }
-        
-        //Add the distance from the last city back to the starting city
-        totalDistance += City.calculateDistance(cities[permutation[permutation.length - 1]], cities[permutation[0]]);
-        
-        return totalDistance;
-    }
-    
-    //Checking if a city has been visited.
-    public static int findNearestCity(int currentCity, City[] cities, boolean[] visited) {
-        int nearestCity = -1;//-1,since that no nearest city has been found yet.
-        double minDistance = Double.MAX_VALUE;
-        
-        //For loop to go through all cities in the array
-        for (int i = 0; i < cities.length; i++) {
-            //Making sure the city isn't visited yet or the current one
-            if (!visited[i] && i != currentCity) {
-                double distance = City.calculateDistance(cities[currentCity], cities[i]);
-                //If both conditions are true, it calculates the distance between the cities
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    nearestCity = i;
-                }
-            }
-        }
-        
-        return nearestCity;
-    }
-    
+public class RunNearestNeighbor{
     //User input into coordinates (n)
     public static void userInput(City[] cities, Scanner sc) {
         for (int i = 0; i < cities.length; i++) {
@@ -86,14 +12,13 @@ public class NearestNeighborTSP{
             cities[i] = new City(x, y);
         }
     }
-    
+
     //Making random coordinates for the random input (r)
     public static void randomInput(City[] cities, Random rn) {
         for (int i = 0; i < cities.length; i++) {
             cities[i] = new City(rn.nextInt(100), rn.nextInt(100));
         }
     }
-    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rn = new Random();
@@ -146,13 +71,13 @@ public class NearestNeighborTSP{
         for (int i = 1; i < n; i++) {
             int currentCity = tour[i - 1];
             //To determine the nearest unvisited city
-            int nearestCity = findNearestCity(currentCity, cities, visited);
+            int nearestCity = NearestNeighborTSP.findNearestCity(currentCity, cities, visited);
             //Add the nearest unvisited city to the tour
             tour[i] = nearestCity;
             //Result stored in nearestCity
             visited[nearestCity] = true;
         }
-        double tourDistance = calculateTourDistance(cities, tour);
+        double tourDistance = NearestNeighborTSP.calculateTourDistance(cities, tour);
         
         long finalTime = System.nanoTime();
         
