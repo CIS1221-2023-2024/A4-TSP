@@ -15,6 +15,14 @@ Gary Ken Micallef: Focus on Python Development and documentation.
 Python: No special requirements for executing code
 
 Java:
+Java running the program"void main (String[]args)" The Runner of the program is the program is the 
+as they have to be opened from “RunBranchAndBound”,” RunBruteForce” and “RunNearestNeighbor” for each different way respectively. 
+
+For the running of each different method to work, the files with the are needed to execute the code.
+
+For the runners to function properly they need their specific code such as ‘BranchAndBound’, ‘BruteForce’, and ‘NearestNeighborTSP’ for the runners above.
+the city class is essential for all the methods to work because it does the coordinates handling for the program. 
+
 
 **Tests**: To run python test, dowload the file and then on command line access the file
 
